@@ -353,26 +353,26 @@ function initTiltEffect() {
 }
 
 const data = [
-  { title: "Log #001: The Digital Scallywag", body: "Initial scans of Subject X revealed a startling truth: she’s been sailing the chaotic web far longer than most normies. She catches references hidden in the deepest, most degenerate trenches of the Grand Line." },
-  { title: "Log #002: The Raina Allegations", body: "Subject claims to fly the flag of the most famous lockdown comedian. Yet, interrogation reveals a severe lack of 'craaazy ho gaya' in her recent vocabulary. Suspicions of a fake fan are high. Investigation ongoing." },
-  { title: "Log #003: A Broken Compass", body: "Tracking this anomaly is utterly futile. I thought I was lost at sea, but she makes me look like a grand navigator. She possesses the exact directional awareness of a certain green-haired pirate." },
+  { title: "Log #001: The Digital Scallywag", body: "" },
+  { title: "Log #002: The Raina Allegations", body: "" },
+  { title: "Log #003: A Broken Compass", body: "" },
   // MAZE GAME
-  { title: "Log #004: The ENT Ambush", body: "I must document the time The Clumsy Corsair tried to stealthily wait for me outside the ENT department, only to get completely caught. A master of infiltration, she is not. But a master of sticking around? Absolutely." },
+  { title: "Log #004: The ENT Ambush", body: "" },
   // CATCH GAME
-  { title: "Log #005: The Lo-Fi Interrogation", body: "Subject claims to know the actual name 'Powfu' without using a transponder snail to search it. I call absolute bullshit on this claim. You have 10 seconds to confess to the captain." },
-  { title: "Log #006: The Ironclad Treaty", body: "In these treacherous waters, a 'Pinky Promise' is often a myth. But I’ve documented that when she hooks that finger, the vault is sealed. A rare, honorable head on those shoulders." },
-  { title: "Log #007: High-Speed Hyperfixation", body: "A sudden and aggressive pivot in the anomaly's behavior. She is now obsessed with high-speed land ships. Gosh, am I happy I finally have a co-pilot to share this ridiculous F1 addiction with." },
+  { title: "Log #005: The Lo-Fi Interrogation", body: "" },
+  { title: "Log #006: The Ironclad Treaty", body: "In these treacher" },
+  { title: "Log #007: High-Speed Hyperfixation", body: "A sudden and aggressive pivot in " },
   // F1 GAME
-  { title: "Log #008: Radiation of Warmth", body: "This is where she earns the title 'Sunshine'. In a stupid university that often feels like a sinking ship, she emits an elegant, pulse-like warmth. Time spent in her radius never feels like a chore." },
-  { title: "Log #009: The Cursed Ration", body: "Subject has an alarming dietary hyperfixation. Despite possessing functioning taste buds, she consistently orders the exact same puff from the canteen. I would honestly rather eat empty air than consume that absolute tragedy of a pastry. Yet, she defends it like it's a legendary Devil Fruit." },
-  { title: "Log #010: The Baseline Panic", body: "It must be noted that a baseline level of 'freaking out' is just her default operating state. Whether we are navigating the Orthopaedics ward or just executing a basic daily plan, there will be panic. But the most infuriating part? Even while actively panicking, she remains frustratingly good at absolutely everything she tries her hand at." },
-  { title: "Log #011: The Ship's Doctor", body: "Clinical observation: Subject is naturally hardwired to patch people up. She doesn't do it for the glory or the bounty; it's simply built into her hull. She steps up when the rest of the crew is in the dumps." },
-  { title: "Log #012: The Resilient Bubble", body: "Even after battling through a rough storm she did not deserve, the anomaly maintains a cartoonish, bubbly charm. It’s not chaotic noise; it’s a quiet defiance. Making sure the crew smiles even when she’s questioning her own map." },
-  { title: "Log #013: The Fifth Path", body: "Truth matters in this log. If presented with three safe routes and one deeply cursed one, the anomaly will somehow invent a fifth. Both on the road and in life. And honestly? It makes the voyage worth it." },
+  { title: "Log #008: Radiation of Warmth", body: "" },
+  { title: "Log #009: The Cursed Ration", body: "" },
+  { title: "Log #010: The Baseline Panic", body: "" },
+  { title: "Log #011: The Ship's Doctor", body: "." },
+  { title: "Log #012: The Resilient Bubble", body: "" },
+  { title: "Log #013: The Fifth Path", body: "Truth mat" },
   // CHOPPER GAME
-  { title: "Log #014: The Craftsman's Protocol", body: "I came to her for a simple tactical suggestion an idea for a gift. A week later, she co-opted the mission, putting in unbelievable effort to help me *make* the damn thing. Honestly, it's infuriating how naturally skilled you are at everything, especially crafting things by hand.<br><br>You tell me the part of you that loves making handmade gifts is dead. It is not. You can't let that die. That effort makes getting a gift from you 10000 times more meaningful, warna kaun hi karne jaata hai itna. I want you to see that you have people for whom those efforts matter. Like i'll tell you the only reason you have this website is because i am not skilled at handmade stuff so this was the only thing I knew i can do which will come out decent :(" },
+  { title: "Log #014: The Craftsman's Protocol", body: "" },
   // GLITCH GAME
-  { title: "Log #015: The Malikah Aftermath", body: "I've kept this out of the official logs for a whole year kyuki why should I toot your horn but today is the day. The conversation after Malikah's birthday.<br><br>That was the day I felt like we are finally at a different place . It wasn't just 'college me hi hello dikh gaye' types anymore. It was an honest, basic conversation where I felt like I was finally talking to a human, not some mumbo jumbo jo dusron ke kandhon par bandook chalate firta hai. That conversation was real enough where i knew ki this is something i will cherish and i am glad to say i am really grateful that we had the conversation on the day we did and in the circumstance that we did. It's the exact reason I don't want to end this college without being someone you can trust and rely on because i have seen how much that means to me and if you are as similar as i think we are it'll be the bare minimum i could do for you. " },
+  { title: "Log #015: The Malikah Aftermath", body: "I'v " },
   // CHESS GAME
   { 
     title: "The Ultimate Treasure", 
@@ -521,16 +521,7 @@ function revealTrueTreasure() {
   document.getElementById('story-title').innerText = "The Real Treasure";
   document.getElementById('story-body').innerHTML = `
     <b>Happy birthday to one of the kindest people I know.</b><br><br>
-    I have said this before and will say it again: you are someone I consider really close to the word <span id="secret-trigger" class="secret-word">sunshine</span>. Warm, bright, and easy to trust.<br><br>
-    There are really small moments which are legit anchor points in my memory. Stuff as simple as ruffling my hair. I do not think anyone ever genuinely felt my hair and praised me for it since I came to Vijaywada. I might have honestly cried that evening. It was so niceee to hear that after so long. Like legit people here are so deranged from being normal that it felt nostalgic it felt like home it felt so familiar and it was just one of those moments which mean absolutely nothing for you but for me might be one of the best things to happen for that entire day never would i have imagined that something which i would do on a daily basis will actually mean so much more a few years down the line. Life literally goes from somewhere to nowhere in an instant<br><br>
-    I know things have been fucked up for the entire year, and I am really sorry for the way things have been going. But please, be just as amazing as you always were. I really hope this year is completely different. There's lot more adventures to do lot more places to visit and so many more things to do. We ain't gonna focus on regrets not gonna focus on what our flaws are because guess what? Yes you are prolly everything everyone says but it doesn't matter and it doesn't matter because you are not defined by what you are to someone else you can be the most benefienct angel but still be a blood hungry demon to someone else for the exact same thing.<br><br>
-    I really hope I can get this across to you, no matter how many conversations we have this will always be my belief you are what you want to be, Make mistakes its alright pick it up and we will start over there's no need to be afraid or to feel guilty of your mistakes. They might have consequences and we will deal with them but the moment you start losing your smile is the moment its all over. You are really strong, waaay stronger than you give yourself the credit for things have happened which i wouldn't even wish on my worst enemy but then again you have gone through them all and actually thrived and guess what  you will continue to thrive.<br><br>
-    I am of the belief that there is no such thing as jo likha hai wohi hoga. A stern believer of your destiny is in your own hands but looking at your panauti life, maybe they are right but when i look at it from your perspective you are STILL HERE and that's all that matters, no matter what no matter how many times things happens you show up and that's all that matters that you show up and as long as you show up nothing else makes any difference. You are prolly piece of titanium under all this because ain't no way a human can be this strong.<br><br>
-    People will come people will go but there won't be another one like you, Someone who has surprised me from time to time, its really funny kyuki at the end of it all you are just another girl trying to live in this shithole, its just that you end up doing it in the most surprising of ways.<br><br>
-    I am telling you are not DUMB!! Genuinely one of the smarter people I have met here. Please stop thinking that you are dumb, you have a gift of being socially awesome now how will you make use of it is totally upto you, trust me you can't go wrong with it ever. If you did not let your relationships go to shit in the last year, I can assure you its not happening in this lifetime for you anymore.<br><br>
-    Now the conversation we have prolly spent most time out of everything else, Yes the 3 Significant people in your life right now. Yusra, deal with all of them the way you would like to but trust me nothing is more important than your own mental sanity bois are just that at the end of it all bois the things you would do for them is really commendable but please not at your own expense like i know you understand all this but in practice its toally immpractical isiliye i can just let you know this ki bhai in the search of love if there's nothing left in you then it wasn't worth it. It is only going to be bliss if you are there to experience it, by losing yourself in that process there's nothing to gain. <br><br>
-    Once a year you get to have this day for yourself. Keep it the way you like it, and nothing less. I hope you are the same sunshine to yourself as you are to me. The same old quirky, cartoonish, ever vibrant piece of shit that you are :)<br><br>
-    <b>Have fuuuun!!</b>
+    !</b>
     
     <div id="hidden-photo-container" style="display:none; margin-top:25px; animation: cardIn 0.5s ease-out forwards;">
       <img src="Yusra.jpeg" style="max-width: 100%; border: 4px solid #c9a75c; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.4);">
