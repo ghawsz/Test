@@ -845,9 +845,13 @@ function moveMaze(dr, dc) {
 // ==========================================
 // GAME 6: CHESS PUZZLE
 // ==========================================
+// ==========================================
+// GAME 6: CHESS PUZZLE
+// ==========================================
 let selSq = null;
 let chessStep = 1;
 let boardSetup = {};
+let isThinking = false;
 
 function initChessBoard() {
   chessStep = 1;
@@ -856,13 +860,12 @@ function initChessBoard() {
   boardSetup = {
     '0-0': { type: '♜', color: 'b' }, '0-5': { type: '♜', color: 'b' }, '0-6': { type: '♚', color: 'b' },
     '1-0': { type: '♟', color: 'b' }, '1-1': { type: '♟', color: 'b' }, '1-2': { type: '♟', color: 'b' },
-    '1-5': { type: '♟', color: 'b' }, '1-7': { type: '♟', color: 'b' },
-    '5-7': { type: '♖', color: 'w' }, 
-    // Bishop moved from 5-3 to 7-2 so it no longer illegally covers 1-7 (h7)
-    '7-2': { type: '♗', color: 'w' }, 
+    '1-5': { type: '♟', color: 'b' }, '1-6': { type: '♟', color: 'b' }, '1-7': { type: '♟', color: 'b' },
+    '5-7': { type: '♖', color: 'w' }, // Rook on h3
+    '5-3': { type: '♗', color: 'w' }, // Bishop on d3
+    '4-4': { type: '♕', color: 'w' }, // Queen on e4 (Blocking the Bishop!)
     '6-0': { type: '♙', color: 'w' }, '6-1': { type: '♙', color: 'w' }, '6-2': { type: '♙', color: 'w' },
     '6-5': { type: '♙', color: 'w' }, '6-6': { type: '♙', color: 'w' },
-    '7-3': { type: '♕', color: 'w' }, 
     '7-6': { type: '♔', color: 'w' }  
   };
 }
@@ -895,6 +898,8 @@ function drawChess() {
 }
 
 function clickChess(r, c) {
+  if (isThinking) return;
+
   let id = `${r}-${c}`;
   let status = document.getElementById('chess-status');
   status.style.display = 'none';
@@ -906,9 +911,12 @@ function clickChess(r, c) {
     }
   } else {
     let correct = false;
+    // Step 1: Rook h3 takes h7
     if(chessStep === 1 && selSq === '5-7' && id === '1-7') correct = true;
-    if(chessStep === 2 && selSq === '7-3' && id === '3-7') correct = true;
-    if(chessStep === 3 && selSq === '3-7' && id === '1-7') correct = true;
+    // Step 2: Queen e4 to h4 (Uncovers the Bishop!)
+    if(chessStep === 2 && selSq === '4-4' && id === '4-7') correct = true;
+    // Step 3: Queen h4 to h7 (Mate)
+    if(chessStep === 3 && selSq === '4-7' && id === '1-7') correct = true;
 
     if(correct) {
       playTap();
@@ -918,18 +926,22 @@ function clickChess(r, c) {
       drawChess();
 
       if(chessStep === 1) {
+        isThinking = true;
         setTimeout(() => {
-          boardSetup['1-7'] = boardSetup['0-6']; 
+          boardSetup['1-7'] = boardSetup['0-6']; // Black King takes h7
           delete boardSetup['0-6'];
           drawChess();
           chessStep = 2;
+          isThinking = false;
         }, 600);
       } else if (chessStep === 2) {
+        isThinking = true;
         setTimeout(() => {
-          boardSetup['0-6'] = boardSetup['1-7']; 
+          boardSetup['0-6'] = boardSetup['1-7']; // Black King retreats to g8
           delete boardSetup['1-7'];
           drawChess();
           chessStep = 3;
+          isThinking = false;
         }, 600);
       } else if (chessStep === 3) {
         document.getElementById('sq-1-7').style.background = '#10b981'; 
