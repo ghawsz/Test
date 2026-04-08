@@ -852,12 +852,14 @@ let boardSetup = {};
 function initChessBoard() {
   chessStep = 1;
   selSq = null;
+  isThinking = false;
   boardSetup = {
     '0-0': { type: '♜', color: 'b' }, '0-5': { type: '♜', color: 'b' }, '0-6': { type: '♚', color: 'b' },
     '1-0': { type: '♟', color: 'b' }, '1-1': { type: '♟', color: 'b' }, '1-2': { type: '♟', color: 'b' },
     '1-5': { type: '♟', color: 'b' }, '1-7': { type: '♟', color: 'b' },
     '5-7': { type: '♖', color: 'w' }, 
-    '5-3': { type: '♗', color: 'w' }, 
+    // Bishop moved from 5-3 to 7-2 so it no longer illegally covers 1-7 (h7)
+    '7-2': { type: '♗', color: 'w' }, 
     '6-0': { type: '♙', color: 'w' }, '6-1': { type: '♙', color: 'w' }, '6-2': { type: '♙', color: 'w' },
     '6-5': { type: '♙', color: 'w' }, '6-6': { type: '♙', color: 'w' },
     '7-3': { type: '♕', color: 'w' }, 
