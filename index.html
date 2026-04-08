@@ -129,7 +129,7 @@
   #story-content-wrapper { 
     flex: 1; display: flex; justify-content: center; align-items: center; padding: 20px; 
     position: relative; z-index: 120; animation: shipBob 6s ease-in-out infinite; 
-    perspective: 1000px; /* Needed for 3D tilt */
+    perspective: 1000px; 
   }
 
   .content-card {
@@ -139,7 +139,7 @@
     border-radius: 8px; padding: 50px 40px; max-width: 600px; width: 90%;
     text-align: center; max-height: 75vh; overflow-y: auto; overflow-x: hidden;
     animation: cardIn 0.5s ease-out forwards;
-    transform-style: preserve-3d; /* Smooth 3D rendering */
+    transform-style: preserve-3d; 
   }
   @keyframes cardIn { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
   
@@ -328,7 +328,6 @@ function initTiltEffect() {
   const card = document.getElementById('active-card');
   
   card.addEventListener('mousemove', (e) => {
-    // Check if the screen is large enough to warrant a mouse effect
     if (window.innerWidth < 768) return; 
     
     const rect = card.getBoundingClientRect();
@@ -353,26 +352,26 @@ function initTiltEffect() {
 }
 
 const data = [
-  { title: "Log #001: The Digital Scallywag", body: "" },
-  { title: "Log #002: The Raina Allegations", body: "" },
-  { title: "Log #003: A Broken Compass", body: "" },
+  { title: "Log #001: The Digital Scallywag", body: "Initial scans of Subject X revealed a startling truth: she’s been sailing the chaotic web far longer than most normies. She catches references hidden in the deepest, most degenerate trenches of the Grand Line." },
+  { title: "Log #002: The Raina Allegations", body: "Subject claims to fly the flag of the most famous lockdown comedian. Yet, interrogation reveals a severe lack of 'craaazy ho gaya' in her recent vocabulary. Suspicions of a fake fan are high. Investigation ongoing." },
+  { title: "Log #003: A Broken Compass", body: "Tracking this anomaly is utterly futile. I thought I was lost at sea, but she makes me look like a grand navigator. She possesses the exact directional awareness of a certain green-haired pirate." },
   // MAZE GAME
-  { title: "Log #004: The ENT Ambush", body: "" },
+  { title: "Log #004: The ENT Ambush", body: "I must document the time The Clumsy Corsair tried to stealthily wait for me outside the ENT department, only to get completely caught. A master of infiltration, she is not. But a master of sticking around? Absolutely." },
   // CATCH GAME
-  { title: "Log #005: The Lo-Fi Interrogation", body: "" },
-  { title: "Log #006: The Ironclad Treaty", body: "In these treacher" },
-  { title: "Log #007: High-Speed Hyperfixation", body: "A sudden and aggressive pivot in " },
+  { title: "Log #005: The Lo-Fi Interrogation", body: "Subject claims to know the actual name 'Powfu' without using a transponder snail to search it. I call absolute bullshit on this claim. You have 10 seconds to confess to the captain." },
+  { title: "Log #006: The Ironclad Treaty", body: "In these treacherous waters, a 'Pinky Promise' is often a myth. But I’ve documented that when she hooks that finger, the vault is sealed. A rare, honorable head on those shoulders." },
+  { title: "Log #007: High-Speed Hyperfixation", body: "A sudden and aggressive pivot in the anomaly's behavior. She is now obsessed with high-speed land ships. Gosh, am I happy I finally have a co-pilot to share this ridiculous F1 addiction with." },
   // F1 GAME
-  { title: "Log #008: Radiation of Warmth", body: "" },
-  { title: "Log #009: The Cursed Ration", body: "" },
-  { title: "Log #010: The Baseline Panic", body: "" },
-  { title: "Log #011: The Ship's Doctor", body: "." },
-  { title: "Log #012: The Resilient Bubble", body: "" },
-  { title: "Log #013: The Fifth Path", body: "Truth mat" },
+  { title: "Log #008: Radiation of Warmth", body: "This is where she earns the title 'Sunshine'. In a stupid university that often feels like a sinking ship, she emits an elegant, pulse-like warmth. Time spent in her radius never feels like a chore." },
+  { title: "Log #009: The Cursed Ration", body: "Subject has an alarming dietary hyperfixation. Despite possessing functioning taste buds, she consistently orders the exact same puff from the canteen. I would honestly rather eat empty air than consume that absolute tragedy of a pastry. Yet, she defends it like it's a legendary Devil Fruit." },
+  { title: "Log #010: The Baseline Panic", body: "It must be noted that a baseline level of 'freaking out' is just her default operating state. Whether we are navigating the Orthopaedics ward or just executing a basic daily plan, there will be panic. But the most infuriating part? Even while actively panicking, she remains frustratingly good at absolutely everything she tries her hand at." },
+  { title: "Log #011: The Ship's Doctor", body: "Clinical observation: Subject is naturally hardwired to patch people up. She doesn't do it for the glory or the bounty; it's simply built into her hull. She steps up when the rest of the crew is in the dumps." },
+  { title: "Log #012: The Resilient Bubble", body: "Even after battling through a rough storm she did not deserve, the anomaly maintains a cartoonish, bubbly charm. It’s not chaotic noise; it’s a quiet defiance. Making sure the crew smiles even when she’s questioning her own map." },
+  { title: "Log #013: The Fifth Path", body: "Truth matters in this log. If presented with three safe routes and one deeply cursed one, the anomaly will somehow invent a fifth. Both on the road and in life. And honestly? It makes the voyage worth it." },
   // CHOPPER GAME
-  { title: "Log #014: The Craftsman's Protocol", body: "" },
+  { title: "Log #014: The Craftsman's Protocol", body: "I came to her for a simple tactical suggestion—an idea for a gift. A week later, she co-opted the mission, putting in unbelievable effort to help me *make* the damn thing. Honestly, it's infuriating how naturally skilled you are at everything, especially crafting things by hand.<br><br>You tell me the part of you that loves making handmade gifts is dead. It is not. You can't let that die. That effort makes getting a gift from you 10000 times more meaningful, warna kaun hi karne jaata hai itna. I want you to see that you have people for whom those efforts matter." },
   // GLITCH GAME
-  { title: "Log #015: The Malikah Aftermath", body: "I'v " },
+  { title: "Log #015: The Malikah Aftermath", body: "I've kept this out of the official logs for a whole year—kyuki why should I toot your horn—but today is the day. The conversation after Malikah's birthday.<br><br>That was the day we crossed a line. It wasn't just 'college me hi hello dikh gaye' types anymore. It was an honest, basic conversation where I felt like I was finally talking to a human, not some mumbo jumbo jo dusron ke kandhon par bandook chalate firta hai. That conversation was too real to ever walk back from. It's the exact reason I don't want to end this college without being someone you can trust and rely on." },
   // CHESS GAME
   { 
     title: "The Ultimate Treasure", 
@@ -422,7 +421,7 @@ function startWrapped() {
   
   setupProgressBars();
   renderContent();
-  initTiltEffect(); // Initialize 3D Tilt effect
+  initTiltEffect(); 
 }
 
 function setupProgressBars() {
@@ -481,6 +480,16 @@ function renderContent() {
   }
 }
 
+// --- NEW GAWAR BUTTON LOGIC ---
+let gawarClicks = 0;
+const gawarMsgs = [
+  "GAWAR",
+  "Arey bola na kuch nahi hai!",
+  "Kitni baar dabayegi?",
+  "Ziddi hai bhai tu.",
+  "Upar MEAT (🍖) pe click kar bewakoof."
+];
+
 function showStoryCard() {
   document.getElementById('game-overlay').style.display = 'none';
   document.getElementById('story-content-wrapper').style.display = 'flex';
@@ -498,18 +507,32 @@ function showStoryCard() {
   extraDiv.innerHTML = '';
 
   if(d.extra === "Bait") {
+    gawarClicks = 0; 
     document.getElementById('tap-right').style.display = 'none'; 
     extraDiv.innerHTML = `
-      <button class="action-btn" style="margin-top:20px; font-family: 'Pirata One', serif;" onclick="showGawar()">Click here to proceed</button>
-      <div id="gawar-msg" style="display:none; color: #ef4444; font-family: 'Pirata One', serif; font-size: 2rem; margin-top: 15px; letter-spacing: 2px;">GAWAR</div>
+      <button id="bait-btn" class="action-btn" style="margin-top:20px; font-family: 'Pirata One', serif;" onclick="showGawar()">Click here to proceed</button>
     `;
   }
 }
 
 function showGawar() {
   playError();
-  document.getElementById('gawar-msg').style.display = 'block';
+  const btn = document.getElementById('bait-btn');
+  if(btn) {
+     // Change the text and make it red
+     btn.innerText = gawarMsgs[Math.min(gawarClicks, gawarMsgs.length - 1)];
+     btn.style.background = "#8a1c1c"; 
+     btn.style.color = "#f4e4bc";
+     btn.style.borderColor = "#f4e4bc";
+     
+     // Quick CSS shake effect
+     btn.style.transform = 'translate(-5px, 5px)';
+     setTimeout(() => btn.style.transform = 'translate(5px, -5px)', 50);
+     setTimeout(() => btn.style.transform = 'translate(0, 0)', 100);
+  }
+  gawarClicks++;
 }
+// -----------------------------
 
 function revealTrueTreasure() {
   playSuccess();
@@ -521,10 +544,14 @@ function revealTrueTreasure() {
   document.getElementById('story-title').innerText = "The Real Treasure";
   document.getElementById('story-body').innerHTML = `
     <b>Happy birthday to one of the kindest people I know.</b><br><br>
-    !</b>
+    I have said this before and will say it again: you are someone I consider really close to the word <span id="secret-trigger" class="secret-word">sunshine</span>. Warm, bright, and easy to trust.<br><br>
+    There are really small moments which are legit anchor points in my memory. Stuff as simple as ruffling my hair. I do not think anyone ever genuinely felt my hair and praised me for it since I came to VIJ. I might have honestly cried that evening. It was so niceee to hear that after so long.<br><br>
+    I know things have been fucked up for the entire year, and I am really sorry for the way things have been going. But please, be just as amazing as you always were. I really hope this year is completely different.<br><br>
+    Once a year you get to have this day for yourself. Keep it the way you like it, and nothing less. I hope you are the same sunshine to yourself as you are to me.<br><br>
+    <b>Have fuuuun!!</b>
     
     <div id="hidden-photo-container" style="display:none; margin-top:25px; animation: cardIn 0.5s ease-out forwards;">
-      <img src="Yusra.jpeg" style="max-width: 100%; border: 4px solid #c9a75c; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.4);">
+      <img src="YOUR_PHOTO_HERE.jpg" style="max-width: 100%; border: 4px solid #c9a75c; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.4);">
     </div>
     `;
   
@@ -606,6 +633,8 @@ function loadCatchGame(box) {
     </div>
   `;
 }
+
+// IMPROVED CATCH LOGIC - Guaranteed to teleport to opposite quadrant
 function handleCatch(e) {
   e.preventDefault();
   const btn = document.getElementById('catch-btn');
@@ -627,10 +656,24 @@ function handleCatch(e) {
     return;
   }
   
-  const maxX = container.clientWidth - btn.clientWidth - 20;
-  const maxY = container.clientHeight - btn.clientHeight - 20;
-  const newX = Math.random() * maxX + 10;
-  const newY = Math.random() * maxY + 10;
+  const isLeft = (btn.offsetLeft < container.clientWidth / 2);
+  const isTop = (btn.offsetTop < container.clientHeight / 2);
+  
+  let newX, newY;
+  
+  // If it's on the left, force it to spawn on the right half, and vice versa
+  if (isLeft) {
+      newX = (container.clientWidth / 2) + Math.random() * (container.clientWidth / 2 - btn.clientWidth - 10);
+  } else {
+      newX = 10 + Math.random() * (container.clientWidth / 2 - btn.clientWidth - 10);
+  }
+  
+  // Same logic for top/bottom
+  if (isTop) {
+      newY = (container.clientHeight / 2) + Math.random() * (container.clientHeight / 2 - btn.clientHeight - 10);
+  } else {
+      newY = 10 + Math.random() * (container.clientHeight / 2 - btn.clientHeight - 10);
+  }
   
   btn.style.left = newX + "px";
   btn.style.top = newY + "px";
@@ -843,10 +886,12 @@ function moveMaze(dr, dc) {
 }
 
 // ==========================================
-// GAME 6: CHESS PUZZLE
+// GAME 6: CHESS PUZZLE (Anastasia's Mate)
 // ==========================================
-// ==========================================
-// GAME 6: CHESS PUZZLE
+// Solution:
+// 1. Knight to e7 (Check) -> Black King forced to h8
+// 2. Queen takes h7 (Check) -> Black King forced to take Queen on h7
+// 3. Rook to h3 (Checkmate!)
 // ==========================================
 let selSq = null;
 let chessStep = 1;
@@ -858,14 +903,18 @@ function initChessBoard() {
   selSq = null;
   isThinking = false;
   boardSetup = {
-    '0-0': { type: '♜', color: 'b' }, '0-5': { type: '♜', color: 'b' }, '0-6': { type: '♚', color: 'b' },
+    '0-5': { type: '♜', color: 'b' }, // Rook on f8
+    '0-6': { type: '♚', color: 'b' }, // King on g8
+    '1-6': { type: '♟', color: 'b' }, // Pawn on g7
+    '1-7': { type: '♟', color: 'b' }, // Pawn on h7
+    '3-3': { type: '♘', color: 'w' }, // Knight on d5
+    '4-7': { type: '♕', color: 'w' }, // Queen on h4
+    '5-0': { type: '♖', color: 'w' }, // Rook on a3
+    
+    // Distraction pieces
+    '0-0': { type: '♜', color: 'b' }, 
     '1-0': { type: '♟', color: 'b' }, '1-1': { type: '♟', color: 'b' }, '1-2': { type: '♟', color: 'b' },
-    '1-5': { type: '♟', color: 'b' }, '1-6': { type: '♟', color: 'b' }, '1-7': { type: '♟', color: 'b' },
-    '5-7': { type: '♖', color: 'w' }, // Rook on h3
-    '5-3': { type: '♗', color: 'w' }, // Bishop on d3
-    '4-4': { type: '♕', color: 'w' }, // Queen on e4 (Blocking the Bishop!)
     '6-0': { type: '♙', color: 'w' }, '6-1': { type: '♙', color: 'w' }, '6-2': { type: '♙', color: 'w' },
-    '6-5': { type: '♙', color: 'w' }, '6-6': { type: '♙', color: 'w' },
     '7-6': { type: '♔', color: 'w' }  
   };
 }
@@ -911,12 +960,12 @@ function clickChess(r, c) {
     }
   } else {
     let correct = false;
-    // Step 1: Rook h3 takes h7
-    if(chessStep === 1 && selSq === '5-7' && id === '1-7') correct = true;
-    // Step 2: Queen e4 to h4 (Uncovers the Bishop!)
-    if(chessStep === 2 && selSq === '4-4' && id === '4-7') correct = true;
-    // Step 3: Queen h4 to h7 (Mate)
-    if(chessStep === 3 && selSq === '4-7' && id === '1-7') correct = true;
+    // Step 1: Knight on d5 (3-3) to e7 (1-4)
+    if(chessStep === 1 && selSq === '3-3' && id === '1-4') correct = true;
+    // Step 2: Queen on h4 (4-7) takes h7 (1-7)
+    if(chessStep === 2 && selSq === '4-7' && id === '1-7') correct = true;
+    // Step 3: Rook on a3 (5-0) to h3 (5-7)
+    if(chessStep === 3 && selSq === '5-0' && id === '5-7') correct = true;
 
     if(correct) {
       playTap();
@@ -928,7 +977,7 @@ function clickChess(r, c) {
       if(chessStep === 1) {
         isThinking = true;
         setTimeout(() => {
-          boardSetup['1-7'] = boardSetup['0-6']; // Black King takes h7
+          boardSetup['0-7'] = boardSetup['0-6']; // Black King forced to h8
           delete boardSetup['0-6'];
           drawChess();
           chessStep = 2;
@@ -937,14 +986,14 @@ function clickChess(r, c) {
       } else if (chessStep === 2) {
         isThinking = true;
         setTimeout(() => {
-          boardSetup['0-6'] = boardSetup['1-7']; // Black King retreats to g8
-          delete boardSetup['1-7'];
+          boardSetup['1-7'] = boardSetup['0-7']; // Black King forced to take Queen on h7
+          delete boardSetup['0-7'];
           drawChess();
           chessStep = 3;
           isThinking = false;
         }, 600);
       } else if (chessStep === 3) {
-        document.getElementById('sq-1-7').style.background = '#10b981'; 
+        document.getElementById('sq-5-7').style.background = '#10b981'; 
         setTimeout(() => completeGame('chess'), 1000);
       }
     } else {
